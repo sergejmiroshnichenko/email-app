@@ -1,0 +1,80 @@
+.wrap{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wraps{
+  align-items: start;
+}
+
+.wraps:after{
+  content: "";
+  width: 100%;
+  background-color: rgb(214, 228, 229);
+  height: 1px;
+  display: block;
+  margin: 0;
+}
+
+.primary {
+  border-radius: 7px;
+  height: 50px;
+  width: 276px;
+  font-size: 17px;
+  text-align: left;
+  color: brown;
+  border: 1px solid burlywood;
+  font-family: Bradley Hand, cursive;
+  padding-left: 10px;
+  letter-spacing: 1.2px;
+  outline: red;
+}
+
+.secondary{
+  height: 25px;
+  width: 90.5%;
+  letter-spacing: 1px;
+  border: none;
+  margin-left: 55px;
+  font-size: 15px;
+  color: black;
+  outline: none;
+}
+
+.fromEmail{
+  user-select: all;
+  color: darkgray;
+}
+
+.label {
+  font-size: 16px;
+  left: 57px;
+  position: absolute;
+  bottom: 25px;
+  user-select: none;
+  color: darkgrey;
+}
+
+input::placeholder{
+  font-weight: 400;
+  font-size: 15px;
+  color: #8c7676;
+  font-style: italic;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  -webkit-text-stroke: 0.2px black;
+  margin-top: 90px;
+}
+
+.errorSecondary{
+  font-size: 15px;
+  right: 0;
+  margin: auto;
+}
+

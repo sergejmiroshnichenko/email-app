@@ -12,7 +12,9 @@ header{
   display: flex;
   list-style-type: none;
   font-size: 18px;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 760px;
 }
 
 a{
@@ -27,4 +29,8 @@ a{
 .logout:hover{
   color: red;
   transition: all .2s linear;
+}
+
+li{
+  list-style-type: none;
 }

@@ -1,0 +1,80 @@
+.container{
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.emailPage{
+  background:white;
+  height: 100vh;
+}
+
+.write{
+  background-color: #c2e7ff;
+  width: 140px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  height: 56px;
+  min-width: 48px;
+  overflow: hidden;
+  padding: 0 24px 0 15px;
+  text-transform: none;
+  align-items: center;
+  background-image: none;
+  border-radius: 16px;
+  color: #001d35;
+  letter-spacing: 0.7px;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+}
+
+.write:hover{
+  transition: box-shadow .08s linear,min-width .15s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302),0 4px 8px 3px rgba(60,64,67,0.149);
+  background-color: #c2e7ff;
+  user-select: none;
+}
+
+.sent{
+  background-color: #d3e3fd;
+  width: 224.6px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  height: 45px;
+  min-width: 48px;
+  padding-right: 57px;
+  border-radius: 16px;
+  color: #001d35;
+  letter-spacing: 0.7px;
+  margin-top: 25px;
+}
+
+.from{
+  position: absolute;
+  top: 83px;
+  color: gray;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.to{
+  color: gray;
+  font-weight: 400;
+  font-size: 14px;
+  padding-top: 7px;
+  position: absolute;
+}
+
+.formSend{
+  padding: 18px 10px 0 10px;
+  overflow: hidden;
+}
+
+//.block {
+//  position: absolute;
+//  width: 450px;
+//}
