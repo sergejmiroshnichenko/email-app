@@ -20,7 +20,7 @@ const App = () => {
     //                 Authorization: `Basic ${token}`,
     //             },
     //             data: {
-    //                 username: 'qwerty', email: 'qwerty@gmail.com', password: 'q'
+    //                 username: 'test', email: 'qwerty@gmail.com', password: 'qwerty'
     //             },
     //         },
     //     );

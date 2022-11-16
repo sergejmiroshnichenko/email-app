@@ -12,7 +12,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 const HomePage = ({setIsLoggedIn, setUserName, setUserEmail, setUserPassword, isLoadedIn}) => {
 
     const [showPassword, setShowPassword] = useState(false);
-    const [catchError, setCatchError] = useState('');
+    const [catchError, setCatchError] = useState(null);
     const [modalActive, setModalActive] = useState(false);
 
     const changeFormValidation = () => {
@@ -39,6 +39,26 @@ const HomePage = ({setIsLoggedIn, setUserName, setUserEmail, setUserPassword, is
     });
 
 
+    // const axiosInstance = axios.create({
+    //     baseURL: 'http://68.183.74.14:4005/api',
+    //     headers: {
+    //         Accept: 'application/json',
+    //         'Content-Type': 'application/json',
+    //     },
+    // });
+    //
+    // const fetchUserData = async (username, password) => {
+    //     const requestConfig: AxiosRequestConfig = {
+    //         headers: { Authorization: `Basic ${btoa(`${username}:${password}`)}`},
+    //         url: '/users/current/',
+    //         method: 'get',
+    //     };
+    //
+    //     const response = await axiosInstance.request(requestConfig);
+    //     response.data.then(res => console.log(res.json()));
+    //     return response.data.then(res => res.json());
+    // };
+
     const send = (userName, userEmail, userPassword) => {
         const user = 'dev_1';
         const password = 'AggC21223';
@@ -57,29 +77,8 @@ const HomePage = ({setIsLoggedIn, setUserName, setUserEmail, setUserPassword, is
             .catch(error => setCatchError(error.response.data.username.join()))
     }
 
-    const axiosInstance = axios.create({
-        baseURL: 'http://68.183.74.14:4005/api',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-    });
-
-    const fetchUserData = async (username, password) => {
-        const requestConfig: AxiosRequestConfig = {
-            headers: { Authorization: `Basic ${btoa(`${username}:${password}`)}`},
-            url: '/users/current/',
-            method: 'get',
-        };
-
-        const response = await axiosInstance.request(requestConfig);
-        response.data.then(res => console.log(res.json()));
-        return response.data.then(res => res.json());
-    };
-
     const onSubmit = (data) => {
         console.log('data',data)
-        fetchUserData(data.username, data.password)
         send(data.username, data.email, data.password);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userName', data.username);
@@ -89,7 +88,7 @@ const HomePage = ({setIsLoggedIn, setUserName, setUserEmail, setUserPassword, is
         setUserPassword(data.password);
         setUserEmail(data.email);
         setIsLoggedIn(true);
-        // navigate('./email');
+        // navigate('./email')
         reset();
     }
     return (
@@ -170,7 +169,7 @@ const HomePage = ({setIsLoggedIn, setUserName, setUserEmail, setUserPassword, is
 
                 <button className={styles.submit}
                         type="submit"
-                        onClick={() => {isLoadedIn ? navigate('./email') : setModalActive(true)
+                        onClick={() => { catchError ? navigate('./email') : setModalActive(true)
                         }}
                         disabled={!isValid}>{check}
                 </button>

@@ -5,7 +5,6 @@ import {GrLogout as LogOut} from 'react-icons/gr'
 
 const Header = ({isLoadedIn, setIsLoggedIn, userName, setUserName, userEmail, setUserEmail, setUserPassword}) => {
 
-
     const handleLogOut = () => {
         // localStorage.setItem('isLoggedIn', 'false');
         localStorage.setItem('userName', '');
